@@ -1,0 +1,300 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "stockmanagementapi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/StockManagement/stock-items": {
+      "get": {
+        "tags": [
+          "StockManagement"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StockItemLookup"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StockItemLookup"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StockItemLookup"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/StockManagement/stock-item": {
+      "get": {
+        "tags": [
+          "StockManagement"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StockItemLookup"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StockItemLookup"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StockItemLookup"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/StockManagement/update-stock-item": {
+      "post": {
+        "tags": [
+          "StockManagement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StockManagement/create-stock-item": {
+      "post": {
+        "tags": [
+          "StockManagement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StockItemCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StockManagement/delete-stock-item/{id}": {
+      "delete": {
+        "tags": [
+          "StockManagement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ColourEnum": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "StockItemAccessory": {
+        "type": "object",
+        "properties": {
+          "stockItemAccessoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stockItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stockAccessoryId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StockItemCommand": {
+        "required": [
+          "colour",
+          "costPrice",
+          "make",
+          "model",
+          "price",
+          "registrationNumber",
+          "vin"
+        ],
+        "type": "object",
+        "properties": {
+          "stockItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "registrationNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "make": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "modelYear": {
+            "maximum": 2100,
+            "minimum": 1900,
+            "type": "integer",
+            "format": "int32"
+          },
+          "kms": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "colour": {
+            "$ref": "#/components/schemas/ColourEnum"
+          },
+          "vin": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "costPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "stockItemAccessories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StockItemAccessory"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StockItemLookup": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}
