@@ -1,0 +1,31 @@
+# Angular
+node_modules/
+dist/
+tmp/
+out-tsc/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+coverage/
+.angular/
+.idea/
+.vscode/
+.sass-cache/
+*.iml
+
+# C# API
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+.vscode/
+.vs/
+.idea/
+_ReSharper*/
+project.lock.json
+project.fragment.lock.json
+artifacts/
