@@ -1,36 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\models\\stockitems\\stockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:models\\stockitems\\stockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\controllers\\stockmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:controllers\\stockmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\services\\stockmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:services\\stockmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\models\\stockitems\\lookup\\stockitemlookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:models\\stockitems\\lookup\\stockitemlookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|c:\\users\\dwayn\\onedrive\\desktop\\projects\\stockmanagement\\api\\stockmanagementapi\\services\\istockmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF76A5E2-3D76-4E7F-8674-FACAB9D6A71B}|stockmanagementapi.csproj|solutionrelative:services\\istockmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -38,98 +9,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-28T13:16:54.112Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T13:09:39.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StockManagementController.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Controllers\\StockManagementController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StockManagementController.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Controllers\\StockManagementController.cs",
-              "RelativeToolTip": "Controllers\\StockManagementController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T11:15:32.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StockItem.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Models\\StockItems\\StockItem.cs",
-              "RelativeDocumentMoniker": "Models\\StockItems\\StockItem.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Models\\StockItems\\StockItem.cs",
-              "RelativeToolTip": "Models\\StockItems\\StockItem.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T12:55:51.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StockManagementService.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Services\\StockManagementService.cs",
-              "RelativeDocumentMoniker": "Services\\StockManagementService.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Services\\StockManagementService.cs",
-              "RelativeToolTip": "Services\\StockManagementService.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAQwHoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T19:59:10.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StockItemLookup.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Models\\StockItems\\Lookup\\StockItemLookup.cs",
-              "RelativeDocumentMoniker": "Models\\StockItems\\Lookup\\StockItemLookup.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Models\\StockItems\\Lookup\\StockItemLookup.cs",
-              "RelativeToolTip": "Models\\StockItems\\Lookup\\StockItemLookup.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAgAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T11:49:36.206Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IStockManagementService.cs",
-              "DocumentMoniker": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Services\\IStockManagementService.cs",
-              "RelativeDocumentMoniker": "Services\\IStockManagementService.cs",
-              "ToolTip": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\Services\\IStockManagementService.cs",
-              "RelativeToolTip": "Services\\IStockManagementService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIBQwBMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-27T19:59:20.514Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:323948898:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
             }
           ]
         }

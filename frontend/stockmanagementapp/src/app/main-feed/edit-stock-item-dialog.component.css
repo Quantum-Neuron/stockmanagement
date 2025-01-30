@@ -1,0 +1,29 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 16px; /* Add space between the form fields */
+  }
+  
+  mat-form-field {
+    flex: 1;
+  }
+  
+  .mat-dialog-content {
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+  
+  .mat-dialog-container {
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width as needed */
+  }

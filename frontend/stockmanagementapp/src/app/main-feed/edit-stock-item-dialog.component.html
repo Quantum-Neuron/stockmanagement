@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 mat-dialog-title class="mt-4 mb-2"><strong>Edit Stock Item</strong></h1>
+    <div class="col">
+        <div mat-dialog-content>
+            <form [formGroup]="editForm" class="form-container">
+                <div class="form-row">
+                    <mat-form-field>
+                        <mat-label>Make</mat-label>
+                        <input formControlName="make" matInput />
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Model</mat-label>
+                        <input formControlName="model" matInput />
+                      </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field>
+                        <mat-label>Model Year</mat-label>
+                        <input formControlName="modelYear" matInput />
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>Price</mat-label>
+                        <input formControlName="price" matInput />
+                      </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field>
+                        <mat-label>Kilometers</mat-label>
+                        <input formControlName="kms" matInput />
+                      </mat-form-field>
+                      <mat-form-field>
+                        <mat-label>VIN</mat-label>
+                        <input formControlName="vin" matInput />
+                      </mat-form-field>
+                </div>
+              <div class="mb-4">
+                <label class="mr-4">Primary Image</label>
+                <input type="file" (change)="onPrimaryImageChange($event)" />
+              </div>
+              <div class="mb-4">
+                <label class="mr-4">Secondary Images</label>
+                <input type="file" multiple (change)="onSecondaryImagesChange($event)" />
+              </div>
+            </form>
+          </div>
+          <div mat-dialog-actions>
+            <button mat-button (click)="onCancel()">Cancel</button>
+            <button mat-button (click)="onSave()" color="primary">Save</button>
+          </div>
+    </div>
+
+</div>

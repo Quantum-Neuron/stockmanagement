@@ -37,5 +37,9 @@ namespace stockmanagementapi.Models.StockItems.Command
     
     public List<StockItemAccessory> StockItemAccessories { get; set; } = new List<StockItemAccessory>();
 
+    public IFormFile? PrimaryImage { get; set; }
+
+    public List<IFormFile>? SecondaryImages { get; set; }
+
   }
 }

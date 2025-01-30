@@ -1,0 +1,59 @@
+.profile-icon {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.header img {
+    max-height: 50px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+.header .btn {
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    background: transparent;
+}
+
+.header .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mat-menu-item {
+    color: white !important;
+    background-color: #182848 !important;
+}
+
+.mat-menu-item:hover {
+    background-color: #4b6cb7 !important;
+}
+
+.custom-button {
+    border: 1px solid white;
+    color: #ffcc00;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.custom-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

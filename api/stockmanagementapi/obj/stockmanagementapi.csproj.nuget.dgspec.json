@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\stockmanagementapi.csproj": {}
+    "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\stockmanagementapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\stockmanagementapi.csproj": {
+    "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\stockmanagementapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\stockmanagementapi.csproj",
+        "projectUniqueName": "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\stockmanagementapi.csproj",
         "projectName": "stockmanagementapi",
-        "projectPath": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\stockmanagementapi.csproj",
-        "packagesPath": "C:\\Users\\dwayn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwayn\\OneDrive\\Desktop\\Projects\\stockmanagement\\api\\stockmanagementapi\\obj\\",
+        "projectPath": "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\stockmanagementapi.csproj",
+        "packagesPath": "C:\\Users\\Dwayne Meintjes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dwayne Meintjes\\Downloads\\stockmanagement-main\\stockmanagement-main\\api\\stockmanagementapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dwayn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dwayne Meintjes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +54,7 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.1, )"
             },
@@ -85,6 +84,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -92,6 +95,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[7.2.0, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.6.0.1, )"
             },
             "System.Text.Json": {
               "target": "Package",
@@ -117,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

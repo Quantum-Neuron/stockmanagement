@@ -1,0 +1,16 @@
+:host {
+  width: 100%;
+}
+
+mat-card.h-full {
+  background-color: #b6b6b6 /* Force the background color to aqua */
+}
+
+.wrapper-card {
+  background-color: white /* Ensure the individual mat-cards keep their original color */
+}
+
+mat-card img {
+  max-height: 200px;
+  object-fit: cover;
+}

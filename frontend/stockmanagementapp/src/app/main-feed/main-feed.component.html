@@ -1,1 +1,22 @@
-<p>main-feed works!</p>
+<mat-card class="h-full">
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="16px">
+      <mat-grid-tile *ngFor="let item of pagedStockItems?.items">
+        <mat-card class="w-full wrapper-card ml-4">
+          <mat-card-header>
+            <mat-card-title>{{ item.make }} {{ item.model }}</mat-card-title>
+            <mat-card-subtitle>{{ item.modelYear }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Price: {{ item.price | currency }}</p>
+            <p>Kilometers: {{ item.kms | number }}</p>
+            <p>VIN: {{ item.vinNumber }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="openEditDialog(item)" >View Details</button>
+            <button mat-button color="warn" (click)="deleteStockItem(item.stockItemId)">Delete</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <button mat-fab color="dark" class="add-button" (click)="openAddDialog()">Add Listing</button>
+  </mat-card>
