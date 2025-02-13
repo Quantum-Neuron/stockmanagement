@@ -45,4 +45,3 @@ Release/
 *.pdb
 *.cache
 *.editorconfig
-obj/
