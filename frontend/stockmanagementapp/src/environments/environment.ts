@@ -1,4 +1,4 @@
 export const environment = {
-    isProduction: false,
-    apiUrl: 'http://localhost:5201/api'
+    isProduction: true,
+    apiUrl: 'https://stockmanagementappapi-env-v2-env.eba-ppzuwapm.eu-north-1.elasticbeanstalk.com/'
 }

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { AccountService } from '../../auth/account.service';
 import { MatButton } from '@angular/material/button';

@@ -13,6 +13,8 @@ coverage/
 .vscode/
 .sass-cache/
 *.iml
+.vs/
+vs/
 
 # C# API
 bin/
@@ -29,3 +31,18 @@ _ReSharper*/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+*.bin
+*.exe
+*.db
+*.dll
+*.vsidx
+v17/
+Debug/
+Release/
+.Debug/
+.Release/
+*.pfx
+*.pdb
+*.cache
+*.editorconfig
+obj/
