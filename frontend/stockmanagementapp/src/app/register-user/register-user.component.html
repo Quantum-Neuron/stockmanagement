@@ -36,16 +36,6 @@
       <input formControlName="confirmPassword" type="password" placeholder="Confirm entered password: " matInput />
     </mat-form-field>
 
-    @if (validationErrors) {
-      <div clas="mb-3 p-4 bg-red-100 text-red-600">
-        <ul class="list-disc px-3">
-          @for(error of validationErrors; track $index) {
-            <li>{{error}}</li>
-          }
-        </ul>
-      </div>
-    }
-
     <button [disabled]="registerForm.invalid" mat-flat-button type="submit" class="w-full py-2">Register</button>
   </form>
 </mat-card>

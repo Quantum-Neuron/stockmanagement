@@ -1,6 +1,6 @@
 <header class="header border-b p-3 w-full">
   <div class="flex flex-row align-middle items-center justify-between max-w-screen-2xl mx-auto">
-    <img src="assets/logo.jpg" alt="app logo" class="max-h-16" >
+    <img src="assets/logo.jpg?v={{version}}" alt="app logo" class="max-h-16" >
     <div class="flex gap-3 align-middle">
       @if (accountService.currentUser()) {
         <button mat-button [matMenuTriggerFor]="menu" class="custom-button">

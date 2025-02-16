@@ -11,7 +11,6 @@ using stockmanagementapi.Models.StockItems.Command;
 using stockmanagementapi.Models.StockItems.Lookup;
 using stockmanagementapi.Models.StockItemsAccessories;
 using System.Linq.Dynamic.Core;
-using System.Runtime.InteropServices;
 
 namespace stockmanagementapi.Services.StockManagementServices
 {

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { PagedStockItems, StockItemLookup } from '../Models/StockItems/stockItemLookup';
-import { stockItemCommand } from '../Models/StockItems/stockItemCommand';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +18,10 @@ export class MainFeedService {
       .set('pageSize', pageSize.toString());
 
       return this.http.get<PagedStockItems<StockItemLookup>>(`${this.apiUrl}/stock-items`, { params });
+  }
+
+  healthCheck(): Observable<string> {
+    return this.http.get(`${this.apiUrl}/health-check`, { responseType: 'text' });
   }
 
   updateStockItem(formData: FormData): Observable<any> {

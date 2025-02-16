@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PagedStockItems, StockItemLookup } from './Models/StockItems/stockItemLookup';
 import { MainFeedService } from './services/main-feed.service';
 import { CommonModule } from '@angular/common';
@@ -14,8 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
     CommonModule,
     MatCardModule,
     MatGridListModule,
-    MatButtonModule,
-    EditStockItemDialogComponent
+    MatButtonModule
   ],
   templateUrl: './main-feed.component.html',
   styleUrl: './main-feed.component.css'

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using stockmanagementapi.Models.StockItemImages.Commands;
 using stockmanagementapi.Models.StockItemImages.Lookups;
 using stockmanagementapi.Models.StockItems;
@@ -72,5 +73,12 @@ namespace stockmanagementapi.Controllers
     {
       return this.service.UpdateStockImageAsync(stockImageCommand);
     }
-	}
+
+    [AllowAnonymous]
+    [HttpGet("health-check")]
+    public IActionResult HealthCheck()
+    {
+      return Ok("Success");
+    }
+  }
 }

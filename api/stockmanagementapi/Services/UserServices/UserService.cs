@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using stockmanagementapi.Extensions;
 using stockmanagementapi.Models.Users;
@@ -94,5 +95,5 @@ namespace stockmanagementapi.Services.UserServices
 			var httpContextuser = httpContextAccessor.HttpContext?.User;
 			return Results.Ok(new { IsAuthenticated = httpContextuser?.Identity?.IsAuthenticated ?? false });
 		}
-	}
+  }
 }

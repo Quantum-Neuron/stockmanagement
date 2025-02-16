@@ -4,9 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { AccountService } from '../../auth/account.service';
 import { MatButton } from '@angular/material/button';
-import { MatProgressBar } from '@angular/material/progress-bar';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
-import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +21,7 @@ import { MatDivider } from '@angular/material/divider';
 })
 export class HeaderComponent {
   accountService = inject(AccountService);
+  version = new Date().getTime();
 
   constructor(private router: Router) {}
 

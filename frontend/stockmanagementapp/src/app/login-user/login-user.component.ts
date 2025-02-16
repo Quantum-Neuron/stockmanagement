@@ -7,6 +7,7 @@ import { MatCard } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { MatInput } from '@angular/material/input';
 import { AccountService } from '../auth/account.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ import { AccountService } from '../auth/account.service';
     MatButton,
     MatCard,
     MatInput,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './login-user.component.html',
   styleUrls: ['./login-user.component.css']
@@ -30,6 +31,7 @@ export class LoginUserComponent {
   router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
   returnUrl = "/account/login-user";
+  matSnackBar = inject(MatSnackBar);
 
   constructor() {
     const url = this.activatedRoute.snapshot.queryParams['returnUrl'];
@@ -48,6 +50,12 @@ export class LoginUserComponent {
       next: () => {
         this.accountService.getUserInfo().subscribe();
         this.router.navigateByUrl('/main-feed');
+      }, error: () => {
+        this.matSnackBar.open('Wrong Credentials, Please Try Again.', 'Close', {
+          duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right',
+        })
       }
     })
   }

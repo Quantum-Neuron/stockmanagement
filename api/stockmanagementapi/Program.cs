@@ -1,7 +1,10 @@
+using Amazon;
+using Amazon.Runtime;
 using Amazon.SecretsManager;
 using Amazon.SecretsManager.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using stockmanagementapi;
 using stockmanagementapi.Models;
 using stockmanagementapi.Models.Users;
@@ -12,19 +15,38 @@ using stockmanagementapi.Services.UserServices;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IStockManagementService, StockManagementService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+  var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+  serverOptions.ListenAnyIP(int.Parse(port));
+});
+
+var awsConfig = builder.Configuration.GetAWSOptions();
+
+if (builder.Environment.IsDevelopment())
+{
+  awsConfig.Credentials = new EnvironmentVariablesAWSCredentials();
+}
+else
+{
+  awsConfig.Credentials = new InstanceProfileAWSCredentials();
+}
+awsConfig.Region = RegionEndpoint.EUNorth1;
+
+builder.Services.AddDefaultAWSOptions(awsConfig);
 builder.Services.AddAWSService<IAmazonSecretsManager>();
-var secretsManager = builder.Services.BuildServiceProvider().GetRequiredService<IAmazonSecretsManager>();
-var configuration = builder.Configuration;
 
 try
 {
-  var connectionStringTask = GetConnectionStringFromSecretsManagerAsync(secretsManager, configuration);
-  connectionStringTask.Wait();
-  string connectionString = connectionStringTask.Result;
+  var secretsManager = builder.Services.BuildServiceProvider().GetRequiredService<IAmazonSecretsManager>();
+  string secretName = "DBSecrets";
+
+  var connectionStringTask = await GetConnectionStringFromSecretsManagerAsync(secretsManager, secretName);
+  string connectionString = connectionStringTask;
 
   builder.Services.AddDbContext<ModelDbContext>(options =>
       options.UseSqlServer(connectionString));
@@ -38,26 +60,24 @@ catch (Exception ex)
   {
     Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
   }
-  throw; 
+  throw;
 }
-builder.Services.AddScoped<IStockManagementService, StockManagementService>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddAuthorization();
-builder.Services.AddIdentity<User, IdentityRole>()
-    .AddEntityFrameworkStores<ModelDbContext>()
-    .AddDefaultTokenProviders();
-
-builder.Services.AddTransient<IEmailSender<User>, EmailSender>();
 
 builder.Services.AddCors(options =>
 {
   options.AddPolicy("AllowSpecificOrigin",
       builder => builder
-          .WithOrigins("http://localhost:4200", "https://d6ckbuomlwjrt.cloudfront.net")
+          .WithOrigins("https://d6ckbuomlwjrt.cloudfront.net", "http://d6ckbuomlwjrt.cloudfront.net")
           .AllowAnyHeader()
           .AllowAnyMethod()
           .AllowCredentials());
 });
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<ModelDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddTransient<IEmailSender<User>, EmailSender>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -68,48 +88,27 @@ builder.Services.ConfigureApplicationCookie(options =>
   options.LoginPath = "/api/login";
   options.LogoutPath = "/api/logout";
   options.AccessDeniedPath = "/api/access-denied";
-});
 
-
-
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-  var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
-
-  serverOptions.ListenAnyIP(int.Parse(port), listenOptions =>
+  if (builder.Environment.IsDevelopment())
   {
-    string certPath = Environment.GetEnvironmentVariable("CERTIFICATE_PATH");
-    string certPassword = Environment.GetEnvironmentVariable("CERTIFICATE_PASSWORD");
-
-    if (!string.IsNullOrEmpty(certPath) && !string.IsNullOrEmpty(certPassword))
-    {
-      try
-      {
-        listenOptions.UseHttps(certPath, certPassword);
-        Console.WriteLine("HTTPS configured with certificate.");
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"Error configuring HTTPS: {ex.Message}");
-      }
-    }
-    else
-    {
-      Console.WriteLine("CERTIFICATE_PATH or CERTIFICATE_PASSWORD environment variables not set. Running without HTTPS.");
-    }
-  });
+    options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+  }
+  else
+  {
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.None;
+  }
 });
 
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
-}
+app.UseHttpsRedirection();
 
 app.UseRouting();
+
 app.UseCors("AllowSpecificOrigin");
 app.UseAuthentication();
 app.UseAuthorization();
@@ -126,32 +125,40 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
-async Task<string> GetConnectionStringFromSecretsManagerAsync(IAmazonSecretsManager secretsManager, IConfiguration configuration)
+async Task<string> GetConnectionStringFromSecretsManagerAsync(IAmazonSecretsManager secretsManager, string secretName)
 {
   try
   {
-    string secretName = configuration?["Secrets:DatabaseConnectionString"] ?? "DBSecret";
+    var request = new GetSecretValueRequest
+    {
+      SecretId = secretName,
+      VersionStage = "AWSCURRENT"
+    };
 
-    var request = new GetSecretValueRequest { SecretId = secretName };
     var response = await secretsManager.GetSecretValueAsync(request);
 
-    if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
+    string secretJson = response.SecretString;
+    try
     {
-      return response.SecretString;
+      var secretDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(secretJson);
+
+      string connectionString = $"Server={secretDictionary["host"]},{secretDictionary["port"]};Database=stockapp-db;User Id={secretDictionary["username"]};Password={secretDictionary["password"]};TrustServerCertificate=True;";
+
+      return connectionString;
     }
-    else
+    catch (JsonReaderException jsonEx)
     {
-      Console.WriteLine($"Error getting connection string from Secrets Manager: {response.HttpStatusCode}");
-      throw new Exception("Error getting connection string from Secrets Manager");
+      throw new Exception($"Error parsing JSON: {jsonEx.Message}", jsonEx);
     }
+    catch (KeyNotFoundException keyEx)
+    {
+      throw new Exception($"Missing key in Secrets Manager JSON: {keyEx.Message}", keyEx);
+    }
+
   }
   catch (Exception ex)
   {
-    Console.WriteLine($"Error getting connection string from Secrets Manager: {ex.Message}");
-    if (ex.InnerException != null)
-    {
-      Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-    }
+    Console.WriteLine($"Error getting secret from Secrets Manager: {ex.Message}");
     throw;
   }
 }

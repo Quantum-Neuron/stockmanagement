@@ -41,5 +41,5 @@ namespace stockmanagementapi.Controllers
 		{
 			return this.userService.GetAuthenticationStatus();
 		}
-	}
+  }
 }

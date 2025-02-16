@@ -1,4 +1,5 @@
-﻿using stockmanagementapi.Models.Users;
+﻿using Microsoft.AspNetCore.Mvc;
+using stockmanagementapi.Models.Users;
 
 namespace stockmanagementapi.Services.UserServices
 {
@@ -11,5 +12,5 @@ namespace stockmanagementapi.Services.UserServices
 		Task<IResult> GetUserInfo();
 
 		IResult GetAuthenticationStatus();
-	}
+  }
 }
